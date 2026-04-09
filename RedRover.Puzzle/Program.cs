@@ -43,7 +43,7 @@ while (true)
             Console.WriteLine();
             continue;
         }
-        if (input == "q")
+        if (input.Trim() == "q")
         { 
             Console.WriteLine();
             Console.WriteLine("Exiting program. Thank you for using me!");
@@ -80,11 +80,17 @@ while (true)
             Console.WriteLine("Input cannot be null or empty. Please try again.");
             continue;
         }
-        if (input == "q" || input == "n")
+        if (input.Trim() == "q")
         { 
             Console.WriteLine();
             Console.WriteLine("Exiting program. Thank you for using me!");
             return;
+        }
+        if (input.Trim() == "n")
+        { 
+            Console.WriteLine();
+            Console.WriteLine("If you would like to try another input, please type below. Otherwise, type 'q' to quit.");
+            break;
         }
         
         sortService.SortData(list);
@@ -93,7 +99,7 @@ while (true)
         Console.WriteLine();
         Console.WriteLine(output);
         Console.WriteLine();
-        Console.WriteLine("There you are! If you would like to try another input, please type below. Otherwise, type 'q' to quit.");
+        Console.WriteLine("Here you go! If you would like to try another input, please type below. Otherwise, type 'q' to quit.");
         break;
     }
 }
